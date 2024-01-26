@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="powered-by" content="https://github.com/menduo/mdtree">
+    <title>Table of contents</title>
+    <style>
+        #sidebar:hover,pre{overflow:auto}#footer,#footer a{color:#eee}body{padding:40px}#layout>header,.btns{width:auto}#sidebar{width:400px;height:100%;position:fixed;top:0;right:0;overflow:hidden;background:#fff;z-index:100;padding:18px;border:1px solid #ddd;border-top:none;border-bottom:none}#sidebar h1{font-size:16px}#sidebar a,#sidebar a:visited{color:#4183c4}#sidebar a:hover{font-size:120%;color:#1e90ff}#custom-toc-container{padding-left:0;padding-bottom:20px}#content-container{padding-left:0;padding-right:430px;margin:0}.markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;padding:6px 10px;border-radius:3px}
+#footer{margin:30px auto 10px;}
+#generated-at{margin-top:30px;}
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     /** code highliting start **/
+.codehilite .hll{background-color:#ffc}.codehilite{background:#f8f8f8}.codehilite .c{color:#408080;font-style:italic}.codehilite .err{border:1px solid red}.codehilite .k{color:green;font-weight:700}.codehilite .o{color:#666}.codehilite .ch,.codehilite .cm{color:#408080;font-style:italic}.codehilite .cp{color:#BC7A00}.codehilite .c1,.codehilite .cpf,.codehilite .cs{color:#408080;font-style:italic}.codehilite .gd{color:#A00000}.codehilite .ge{font-style:italic}.codehilite .gr{color:red}.codehilite .gh{color:navy;font-weight:700}.codehilite .gi{color:#00A000}.codehilite .go{color:#888}.codehilite .gp{color:navy;font-weight:700}.codehilite .gs{font-weight:700}.codehilite .gu{color:purple;font-weight:700}.codehilite .gt{color:#04D}.codehilite .kc,.codehilite .kd,.codehilite .kn{color:green;font-weight:700}.codehilite .kp{color:green}.codehilite .kr{color:green;font-weight:700}.codehilite .kt{color:#B00040}.codehilite .m{color:#666}.codehilite .s{color:#BA2121}.codehilite .na{color:#7D9029}.codehilite .nb{color:green}.codehilite .nc{color:#00F;font-weight:700}.codehilite .no{color:#800}.codehilite .nd{color:#A2F}.codehilite .ni{color:#999;font-weight:700}.codehilite .ne{color:#D2413A;font-weight:700}.codehilite .nf{color:#00F}.codehilite .nl{color:#A0A000}.codehilite .nn{color:#00F;font-weight:700}.codehilite .nt{color:green;font-weight:700}.codehilite .nv{color:#19177C}.codehilite .ow{color:#A2F;font-weight:700}.codehilite .w{color:#bbb}.codehilite .mb,.codehilite .mf,.codehilite .mh,.codehilite .mi,.codehilite .mo{color:#666}.codehilite .s2,.codehilite .sb,.codehilite .sc{color:#BA2121}.codehilite .sd{color:#BA2121;font-style:italic}.codehilite .se{color:#B62;font-weight:700}.codehilite .sh{color:#BA2121}.codehilite .si{color:#B68;font-weight:700}.codehilite .sx{color:green}.codehilite .sr{color:#B68}.codehilite .s1{color:#BA2121}.codehilite .ss{color:#19177C}.codehilite .bp{color:green}.codehilite .vc,.codehilite .vg,.codehilite .vi{color:#19177C}.codehilite .il{color:#666}
+
+/** code highliting end **/
+/** css from https://github.com/pandao/editor.md */
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format("woff");
+}
+.markdown-body hr:after,.markdown-body hr:before{display:table;content:""}.markdown-body ol,.markdown-body td,.markdown-body th,.markdown-body ul{padding:0}.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#333;overflow:hidden;font-family:"Microsoft YaHei",Helvetica,"Meiryo UI","Malgun Gothic","Segoe UI","Trebuchet MS",Monaco,monospace,Tahoma,STXihei,"åŽæ–‡ç»†é»‘",STHeiti,"Helvetica Neue","Droid Sans","wenquanyi micro hei",FreeSans,Arimo,Arial,SimSun,"å®‹ä½“",Heiti,"é»‘ä½“",sans-serif;font-size:16px;line-height:1.6;word-wrap:break-word}.markdown-body strong{font-weight:700}.markdown-body h1{margin:.67em 0}.markdown-body img{border:0}.markdown-body hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}.markdown-body input{color:inherit;margin:0;line-height:normal;font:13px/1.4 Helvetica,arial,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}.markdown-body html input[disabled]{cursor:default}.markdown-body input[type=checkbox]{-moz-box-sizing:border-box;box-sizing:border-box;padding:0}.markdown-body *{-moz-box-sizing:border-box;box-sizing:border-box}.markdown-body a{background:0 0;color:#4183c4;text-decoration:none}.markdown-body a:active,.markdown-body a:hover{outline:0;text-decoration:underline}.markdown-body hr{margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #ddd}.markdown-body hr:after{clear:both}.markdown-body blockquote{margin:0}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body .task-list-item,li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}.markdown-body dd{margin-left:0}.markdown-body code{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body .octicon{font:normal normal 16px octicons-anchor;line-height:1;display:inline-block;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-body .octicon-link:before{content:'\f05c'}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body .anchor{position:absolute;top:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.markdown-body .anchor:focus{outline:0}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{display:none;color:#000;vertical-align:middle}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{padding-left:8px;margin-left:-30px;text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{display:inline-block}.markdown-body h1{font-size:2.25em;line-height:1.2}.markdown-body h1 .anchor{line-height:1}.markdown-body h2{font-size:1.75em;line-height:1.225}.markdown-body h2 .anchor{line-height:1}.markdown-body h3{font-size:1.5em;line-height:1.43}.markdown-body h3 .anchor,.markdown-body h4 .anchor{line-height:1.2}.markdown-body h4{font-size:1.25em}.markdown-body h5 .anchor,.markdown-body h6 .anchor{line-height:1.1}.markdown-body h5{font-size:1em}.markdown-body h6{font-size:1em;color:#777}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body blockquote{padding:0 15px;color:#777;border-left:4px solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;-moz-box-sizing:border-box;box-sizing:border-box}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;background-color:#f7f7f7;border-radius:3px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body pre code{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before{content:normal}.markdown-body .pl-c{color:#969896}.markdown-body .pl-c1,.markdown-body .pl-mdh,.markdown-body .pl-mm,.markdown-body .pl-mp,.markdown-body .pl-mr,.markdown-body .pl-s1 .pl-v,.markdown-body .pl-s3,.markdown-body .pl-sc,.markdown-body .pl-sv{color:#0086b3}.markdown-body .pl-e,.markdown-body .pl-en{color:#795da3}.markdown-body .pl-s1 .pl-s2,.markdown-body .pl-smi,.markdown-body .pl-smp,.markdown-body .pl-stj,.markdown-body .pl-vo,.markdown-body .pl-vpf{color:#333}.markdown-body .pl-ent{color:#63a35c}.markdown-body .pl-k,.markdown-body .pl-s,.markdown-body .pl-st{color:#a71d5d}.markdown-body .pl-pds,.markdown-body .pl-s1,.markdown-body .pl-s1 .pl-pse .pl-s2,.markdown-body .pl-sr,.markdown-body .pl-sr .pl-cce,.markdown-body .pl-sr .pl-sra,.markdown-body .pl-sr .pl-sre,.markdown-body .pl-src{color:#df5000}.markdown-body .pl-mo,.markdown-body .pl-v{color:#1d3e81}.markdown-body .pl-id{color:#b52a1d}.markdown-body .pl-ii{background-color:#b52a1d;color:#f8f8f8}.markdown-body .pl-sr .pl-cce{color:#63a35c;font-weight:700}.markdown-body .pl-ml{color:#693a17}.markdown-body .pl-mh,.markdown-body .pl-mh .pl-en,.markdown-body .pl-ms{color:#1d3e81;font-weight:700}.markdown-body .pl-mq{color:teal}.markdown-body .pl-mi{color:#333;font-style:italic}.markdown-body .pl-mb{color:#333;font-weight:700}.markdown-body .pl-md,.markdown-body .pl-mdhf{background-color:#ffecec;color:#bd2c00}.markdown-body .pl-mdht,.markdown-body .pl-mi1{background-color:#eaffea;color:#55a532}.markdown-body .pl-mdr{color:#795da3;font-weight:700}.markdown-body kbd{display:inline-block;padding:3px 5px;font:11px Consolas,"Liberation Mono",Menlo,Courier,monospace;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{float:left;margin:.3em 0 .25em -1.6em;vertical-align:middle}.markdown-body :checked+.radio-label{z-index:1;position:relative;border-color:#4183c4}.editormd-html-preview,.editormd-preview-container{text-align:left;font-size:14px;line-height:1.6;padding:20px;overflow:auto;width:100%;background-color:#fff}.editormd-html-preview blockquote,.editormd-preview-container blockquote{color:#666;border-left:4px solid #ddd;padding-left:20px;margin-left:0;font-size:14px;font-style:italic}.editormd-html-preview p code,.editormd-preview-container p code{margin-left:5px;margin-right:4px}.editormd-html-preview abbr,.editormd-preview-container abbr{background:#ffd}.editormd-html-preview hr,.editormd-preview-container hr{height:1px;border:none;border-top:1px solid #ddd;background:0 0}.editormd-html-preview code,.editormd-preview-container code{border:1px solid #ddd;background:#f6f6f6;padding:3px;border-radius:3px;font-size:14px}.editormd-html-preview pre,.editormd-preview-container pre{border:1px solid #ddd;background:#f6f6f6;padding:10px;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px}.editormd-html-preview pre code,.editormd-preview-container pre code{padding:0}.editormd-html-preview code,.editormd-html-preview kbd,.editormd-html-preview pre,.editormd-preview-container code,.editormd-preview-container kbd,.editormd-preview-container pre{font-family:"YaHei Consolas Hybrid",Consolas,"Meiryo UI","Malgun Gothic","Segoe UI","Trebuchet MS",Helvetica,monospace,monospace}.editormd-html-preview table thead tr,.editormd-preview-container table thead tr{background-color:#F8F8F8}.editormd-html-preview p.editormd-tex,.editormd-preview-container p.editormd-tex{text-align:center}.editormd-html-preview span.editormd-tex,.editormd-preview-container span.editormd-tex{margin:0 5px}.editormd-html-preview .emoji,.editormd-preview-container .emoji{width:24px;height:24px}.editormd-html-preview .katex,.editormd-preview-container .katex{font-size:1.4em}.editormd-html-preview .flowchart,.editormd-html-preview .sequence-diagram,.editormd-preview-container .flowchart,.editormd-preview-container .sequence-diagram{margin:0 auto;text-align:center}.editormd-html-preview .flowchart svg,.editormd-html-preview .sequence-diagram svg,.editormd-preview-container .flowchart svg,.editormd-preview-container .sequence-diagram svg{margin:0 auto}.editormd-html-preview .flowchart text,.editormd-html-preview .sequence-diagram text,.editormd-preview-container .flowchart text,.editormd-preview-container .sequence-diagram text{font-size:15px!important;font-family:"YaHei Consolas Hybrid",Consolas,"Microsoft YaHei","Malgun Gothic","Segoe UI",Helvetica,Arial!important}/*! Pretty printing styles. Used with prettify.js. */.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.clo,.opn,.pun{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.kwd,.tag,.typ{font-weight:700}.str{color:#060}.kwd{color:#006}.com{color:#600;font-style:italic}.typ{color:#404}.lit{color:#044}.clo,.opn,.pun{color:#440}.tag{color:#006}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:2px;border:1px solid #888}ol.linenums{margin-top:0;margin-bottom:0}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}.editormd-html-preview pre.prettyprint,.editormd-preview-container pre.prettyprint{padding:10px;border:1px solid #ddd;white-space:pre-wrap;word-wrap:break-word}.editormd-html-preview ol.linenums,.editormd-preview-container ol.linenums{color:#999;padding-left:2.5em}.editormd-html-preview ol.linenums li,.editormd-preview-container ol.linenums li{list-style-type:decimal}.editormd-html-preview ol.linenums li code,.editormd-preview-container ol.linenums li code{border:none;background:0 0;padding:0}.editormd-html-preview .editormd-toc-menu,.editormd-preview-container .editormd-toc-menu{margin:8px 0 12px;display:inline-block}.editormd-html-preview .editormd-toc-menu>.markdown-toc,.editormd-preview-container .editormd-toc-menu>.markdown-toc{position:relative;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;border:1px solid #ddd;display:inline-block;font-size:1em}.editormd-html-preview .editormd-toc-menu>.markdown-toc>ul,.editormd-preview-container .editormd-toc-menu>.markdown-toc>ul{width:160%;min-width:180px;position:absolute;left:-1px;top:-2px;z-index:100;padding:0 10px 10px;display:none;background:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.2);-moz-box-shadow:0 3px 5px rgba(0,0,0,.2);-ms-box-shadow:0 3px 5px rgba(0,0,0,.2);-o-box-shadow:0 3px 5px rgba(0,0,0,.2);box-shadow:0 3px 5px rgba(0,0,0,.2)}.editormd-html-preview .editormd-toc-menu>.markdown-toc>ul>li ul,.editormd-preview-container .editormd-toc-menu>.markdown-toc>ul>li ul{width:100%;min-width:180px;border:1px solid #ddd;display:none;background:#fff;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px}.editormd-html-preview .editormd-toc-menu .toc-menu-btn:hover,.editormd-html-preview .editormd-toc-menu>.markdown-toc>ul>li a:hover,.editormd-preview-container .editormd-toc-menu .toc-menu-btn:hover,.editormd-preview-container .editormd-toc-menu>.markdown-toc>ul>li a:hover{background-color:#f6f6f6}.editormd-html-preview .editormd-toc-menu>.markdown-toc>ul>li a,.editormd-preview-container .editormd-toc-menu>.markdown-toc>ul>li a{color:#666;padding:6px 10px;display:block;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;transition:background-color .5s ease-out}.editormd-html-preview .editormd-toc-menu>.markdown-toc li,.editormd-preview-container .editormd-toc-menu>.markdown-toc li{position:relative}.editormd-html-preview .editormd-toc-menu>.markdown-toc li>ul,.editormd-preview-container .editormd-toc-menu>.markdown-toc li>ul{position:absolute;top:32px;left:10%;display:none;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.2);-moz-box-shadow:0 3px 5px rgba(0,0,0,.2);-ms-box-shadow:0 3px 5px rgba(0,0,0,.2);-o-box-shadow:0 3px 5px rgba(0,0,0,.2);box-shadow:0 3px 5px rgba(0,0,0,.2)}.editormd-html-preview .editormd-toc-menu>.markdown-toc li>ul:after,.editormd-html-preview .editormd-toc-menu>.markdown-toc li>ul:before,.editormd-preview-container .editormd-toc-menu>.markdown-toc li>ul:after,.editormd-preview-container .editormd-toc-menu>.markdown-toc li>ul:before{pointer-events:pointer-events;position:absolute;left:15px;top:-6px;display:block;content:"";width:0;height:0;border:6px solid transparent;border-width:0 6px 6px;z-index:10}.editormd-html-preview .editormd-toc-menu>.markdown-toc li>ul:before,.editormd-preview-container .editormd-toc-menu>.markdown-toc li>ul:before{border-bottom-color:#ccc}.editormd-html-preview .editormd-toc-menu>.markdown-toc li>ul:after,.editormd-preview-container .editormd-toc-menu>.markdown-toc li>ul:after{border-bottom-color:#fff;top:-5px}.editormd-html-preview .editormd-toc-menu ul,.editormd-preview-container .editormd-toc-menu ul{list-style:none}.editormd-html-preview .editormd-toc-menu a,.editormd-preview-container .editormd-toc-menu a{text-decoration:none}.editormd-html-preview .editormd-toc-menu h1,.editormd-preview-container .editormd-toc-menu h1{font-size:16px;padding:5px 0 10px 10px;line-height:1;border-bottom:1px solid #eee}.editormd-html-preview .editormd-toc-menu h1 .fa,.editormd-preview-container .editormd-toc-menu h1 .fa{padding-left:10px}.editormd-html-preview .editormd-toc-menu .toc-menu-btn,.editormd-preview-container .editormd-toc-menu .toc-menu-btn{color:#666;min-width:180px;padding:5px 10px;border-radius:4px;display:inline-block;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;transition:background-color .5s ease-out}.editormd-html-preview .editormd-toc-menu .toc-menu-btn .fa,.editormd-preview-container .editormd-toc-menu .toc-menu-btn .fa{float:right;padding:3px 0 0 10px;font-size:1.3em}.markdown-body .editormd-toc-menu ul{padding-left:0}.markdown-body .highlight pre,.markdown-body pre{line-height:1.6}hr.editormd-page-break{border:1px dotted #ccc;font-size:0;height:2px}@media only print{hr.editormd-page-break{background:0 0;border:none;height:0}}.editormd-html-preview textarea{display:none}.editormd-html-preview hr.editormd-page-break{background:0 0;border:none;height:0}.editormd-preview-close-btn{color:#fff;padding:4px 6px;font-size:18px;-webkit-border-radius:500px;-moz-border-radius:500px;-ms-border-radius:500px;-o-border-radius:500px;border-radius:500px;display:none;background-color:#ccc;position:absolute;top:25px;right:35px;z-index:19;-webkit-transition:background-color .3s ease-out;-moz-transition:background-color .3s ease-out;transition:background-color .3s ease-out}.editormd-preview-close-btn:hover{background-color:#999}.editormd-preview-active{width:100%;padding:40px}
+
+
+
+    </style>
+    
+</head>
+<body>
+<div id="layout">
+        <div id="sidebar">
+            <h1>Table of Contents</h1>
+            <div id="custom-toc-container">
+                <div class="toc">
+<ul>
+<li><a href="#table-of-contents">Table of contents</a><ul>
+<li><a href="#0"><a name="introduction"></a> 0. Введение</a><ul>
+<li><a href="#_1"><a name="tend"></a> Тенденции развития вычислительных систем, обуславливающие необходимость применения распределённых (параллельных) методов вычислений. Примеры вычислительно ёмких задач из разных областей науки.</a></li>
+<li><a href="#simd-misd-smp-mpp"><a name="class"></a> Классификация параллельных систем (SIMD, MISD…, SMP, MPP)</a></li>
+<li><a href="#sse"><a name="covr"></a> Современные высокопроизводительные системы: начиная от расширений SSE, через многоядерность к узлам кластеров</a></li>
+<li><a href="#_2"><a name="amd"></a> Понятия ускорения, эффективности (закон Амдала)</a></li>
+<li><a href="#java-runnable-vs-thread"><a name="start"></a> Старт потока (Java): реализация Runnable vs наследование от Thread</a></li>
+</ul>
+</li>
+<li><a href="#1-ipc"><a name="multiipc"></a> 1. Многопоточность или IPC</a><ul>
+<li><a href="#ipc">Виды IPC</a></li>
+<li><a href="#ipc_1">Преимущества IPC:</a></li>
+<li><a href="#shmem">Сложности реализации shmem</a></li>
+</ul>
+</li>
+<li><a href="#2"><a name="thread_ending"></a> 2. Завершение потоков</a><ul>
+<li><a href="#_3">Корректное завершение потоков:</a><ul>
+<li><a href="#cancellation-points">Cancellation points</a></li>
+<li><a href="#glibc">Примеры кода в glibc</a></li>
+<li><a href="#interrupted-exception">Interrupted exception</a></li>
+</ul>
+</li>
+<li><a href="#posix-boost-java">Сравнение различных потоков (POSIX, boost, java)</a></li>
+<li><a href="#_4">Проброс исключений между потоками</a></li>
+</ul>
+</li>
+<li><a href="#3"><a name="primitives"></a> 3. Примитивы синхронизации</a><ul>
+<li><a href="#_5">Необходимость синхронизации: простые гонки данных</a></li>
+<li><a href="#_6">Реализация примитивов синхронизации: алгоритм булочника</a></li>
+<li><a href="#_7">Виды мьютексов:</a><ul>
+<li><a href="#_8">рекурсивные/нерекурсивные</a></li>
+<li><a href="#readwrite">read/write</a></li>
+<li><a href="#spin">spin</a></li>
+<li><a href="#futex">futex</a></li>
+</ul>
+</li>
+<li><a href="#_9">Корректные захват/освобождение примитивов</a></li>
+<li><a href="#cas-">CAS-операции и атомики</a></li>
+<li><a href="#_10">Условные переменные:</a></li>
+<li><a href="#thread-local-storage-tls">Thread Local Storage (TLS)</a></li>
+</ul>
+</li>
+<li><a href="#4"><a name="sync_algos"></a> 4. Алгоритмы синхронизации</a><ul>
+<li><a href="#_11">Грубая</a></li>
+<li><a href="#_12">Тонкая</a></li>
+<li><a href="#_13">Оптимистичная</a></li>
+<li><a href="#_14">Ленивая</a></li>
+<li><a href="#orm">Неблокирующая (параллель с ORM)</a></li>
+</ul>
+</li>
+<li><a href="#5"><a name="atomic_snaps"></a> 5. Атомарные снимки регистров</a><ul>
+<li><a href="#_15">Классификация алгоритмов:</a><ul>
+<li><a href="#lock-free">lock-free</a></li>
+<li><a href="#wait-free">wait-free</a></li>
+</ul>
+</li>
+<li><a href="#lock-free-snapshot">Lock-free snapshot</a></li>
+<li><a href="#wait-free-snapshot">Wait-free snapshot</a><ul>
+<li><a href="#swmr">SWMR</a></li>
+<li><a href="#mwmr">MWMR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6"><a name="prog_mistakes"></a> 6. Ошибки || программирования</a><ul>
+<li><a href="#_16">Основные ошибки многопоточного программирования</a><ul>
+<li><a href="#data-race">Гонки данных (Data Race)</a></li>
+<li><a href="#deadlock">Взаимная блокировка (Deadlock)</a></li>
+<li><a href="#_17">Инверсия приоритетов</a></li>
+<li><a href="#aba">Проблема ABA</a><ul>
+<li><a href="#smr">Решение SMR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#7"><a name="memory_model"></a> 7. Модель памяти</a><ul>
+<li><a href="#_18">Пример ошибки в ядре ОС</a></li>
+<li><a href="#_19">Устройство кэшей процессора</a></li>
+<li><a href="#mesi">Пример на протоколе MESI</a></li>
+<li><a href="#storeload">Барьеры памяти (store/load)</a></li>
+<li><a href="#acquirerelease">Acquire/release семантика</a></li>
+<li><a href="#sequential-consistency">Модели памяти: Sequential consistency…</a><ul>
+<li><a href="#sequential-consistency_1">Sequential consistency</a></li>
+<li><a href="#strong-ordering-tso">Strong ordering (TSO)</a></li>
+<li><a href="#weak-ordering">Weak ordering</a></li>
+<li><a href="#super-weak">Super weak</a></li>
+</ul>
+</li>
+<li><a href="#_20">Примеры</a></li>
+</ul>
+</li>
+<li><a href="#8"><a name="profiling"></a> 8. Профилирование многопоточных приложений</a><ul>
+<li><a href="#_21">Средства анализа производительности</a></li>
+<li><a href="#_22">Пример поиска узких мест</a></li>
+<li><a href="#cpi">Профилирование промашек по кэшу и метрика CPI</a></li>
+</ul>
+</li>
+<li><a href="#9-flat-combining"><a name="FC"></a> 9. Flat-Combining</a><ul>
+<li><a href="#flat-combining">Схема Flat-Combining</a></li>
+<li><a href="#_23">Возможные оптимизации за счёт интерференции операций</a></li>
+<li><a href="#lock-free-michael-scott">Сравнение производительности с lock-free очередью Michael &amp; Scott</a></li>
+</ul>
+</li>
+<li><a href="#10-rcu"><a name="rcu"></a> 10. RCU</a><ul>
+<li><a href="#rcu">Суть RCU и синхронизация на эпохах</a></li>
+<li><a href="#kernel-space-rcu">Kernel-space RCU</a></li>
+<li><a href="#user-space-rcu">User-space RCU</a></li>
+</ul>
+</li>
+<li><a href="#11"><a name="tm"></a> 11. Транзакционная память</a><ul>
+<li><a href="#transactional-memory">Идея transactional memory</a><ul>
+<li><a href="#software-transactional-memory">Software transactional memory</a></li>
+<li><a href="#hardware-transactional-memory">Hardware transactional memory</a></li>
+</ul>
+</li>
+<li><a href="#_24">Преимущества и круг задач</a></li>
+<li><a href="#htm">Реализация HTM на линейках кэша</a></li>
+<li><a href="#lock-teleportation">Lock teleportation</a></li>
+</ul>
+</li>
+<li><a href="#12"><a name="async"></a> 12. Асинхронный ввод/вывод</a><ul>
+<li><a href="#_25"><a name="block"></a> Блокирующий/неблокирующий</a></li>
+<li><a href="#_26"><a name="sync_async"></a>Синхронный (реактор)/асинхронный (проактор)</a><ul>
+<li><a href="#proactor"><a name="proactor"></a> Шаблон Proactor</a></li>
+<li><a href="#async-operations-processor"><a name="aop"></a> Реализация async operations processor</a><ul>
+<li><a href="#_27"><a name="func_mult"></a> Функции мультиселектор</a></li>
+<li><a href="#_28"><a name="OS"></a> ОС</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_29"><a name="async_libs"></a> Библиотеки асинхронного ввода/вывода</a><ul>
+<li><a href="#_30"><a name="async_server"></a> Асинхронный сервер:</a></li>
+<li><a href="#_31"><a name="coroutines"></a> Корутины</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#13"><a name="linear"></a> 13. Линеаризуемость</a><ul>
+<li><a href="#_32">Понятие линеаризуемости</a></li>
+<li><a href="#lock-free-trieber">Lock-free стек Trieber</a></li>
+<li><a href="#_33">Пример на очередях</a></li>
+<li><a href="#lock-free-michael-scott_1">Lock-free очередь Michael &amp; Scott</a></li>
+<li><a href="#_34">Точки линеаризации</a></li>
+<li><a href="#relaxed-skiplist">Relaxed SkipList</a></li>
+</ul>
+</li>
+<li><a href="#14-openmp"><a name="openmp"></a> 14. OpenMP</a><ul>
+<li><a href="#_35">Архитектура работы через директивы препроцессора</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#pragma-omp-parallel">pragma omp parallel</a><ul>
+<li><a href="#_36">Параллельные секции</a></li>
+<li><a href="#_37">Области видимости переменных</a></li>
+<li><a href="#_38">Ограничения</a></li>
+<li><a href="#_39">Миграция вычислений</a></li>
+<li><a href="#15-intel-tbb"><a name="tbb"></a> 15. Intel TBB</a><ul>
+<li><a href="#_40">Алгоритмы</a></li>
+<li><a href="#_41">Аллокаторы</a></li>
+<li><a href="#_42">Деревья задач</a></li>
+<li><a href="#work-stealing">Особенности планирования (work stealing…)</a></li>
+<li><a href="#flow-graphs-bpel">flow graphs (параллель с BPEL)</a></li>
+</ul>
+</li>
+<li><a href="#16"><a name="actor_model"></a> 16. Акторная модель</a><ul>
+<li><a href="#_43"><a name="model"></a> Суть модели:</a></li>
+<li><a href="#erlang-beam"><a name="erlang"></a> Erlang и BEAM</a></li>
+<li><a href="#elixir"><a name="elixir"></a> Elixir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+            </div>
+        </div>
+        <div id="content-container">
+            <div class="markdown-body markdown-content">
+                <h1 id="table-of-contents">Table of contents</h1>
+<p><a href="#introduction">0. Введение</a>
+   1. <a href="#tend">Тенденции развития вычислительных систем, обуславливающие необходимость применения распределённых (параллельных) методов вычислений. Примеры вычислительно ёмких задач из разных областей науки</a>
+   2. <a href="#class">Классификация параллельных систем (SIMD, MISD…, SMP, MPP)</a>
+   3. <a href="#covr">Современные высокопроизводительные системы: начиная от расширений SSE, через многоядерность к узлам кластеров</a>
+   4. <a href="#amd">Понятия ускорения, эффективности (закон Амдала)</a>
+   5. <a href="#start">Старт потока (Java): реализация Runnable vs наследование от Thread</a>
+<a href="#multiipc">1. Многопоточность или IPC</a></p>
+<p><a href="#thread_ending">2. Завершение потоков</a></p>
+<p><a href="#primitives">3. Примитивы синхронизации</a></p>
+<p><a href="#sync_algos">4. Алгоритмы синхронизации</a></p>
+<p><a href="#atomic_snaps">5. Атомарные снимки регистров</a></p>
+<p><a href="#prog_mistakes">6. Ошибки || программирования</a></p>
+<p><a href="#memory_model">7. Модель памяти</a>
+   1. <a href="#"></a>
+   1. <a href="#"></a>
+   1. <a href="#"></a></p>
+<p><a href="#profiling">8. Профилирование многопоточных приложений</a></p>
+<p><a href="#FC">9. Flat-Combining</a></p>
+<p><a href="#rcu">10. RCU</a></p>
+<p><a href="#tm">11. Транзакционная память</a></p>
+<p><a href="#async">12. Асинхронный ввод/вывод</a>
+   1. <a href="#block">Блокирующий/неблокирующий</a>
+   2. <a href="#sync_async">Синхронный (реактор)/асинхронный (проактор)</a>
+      1. <a href="#proactor">Шаблон Proactor</a>
+      2. <a href="#aop">Реализация async operations processor</a>
+         1. <a href="#func_mult">Функции мультиселектор</a>
+         2. <a href="#OS">ОС</a>
+   3. <a href="#async_libs">Библиотеки асинхронного ввода/вывода</a>
+      1. <a href="#async_server">Асинхронный сервер</a>
+      2. <a href="#coroutines">Корутины</a></p>
+<p><a href="#linear">13. Линеаризуемость</a></p>
+<p><a href="#openmp">14. OpenMP</a></p>
+<p><a href="#tbb">15. Intel TBB</a></p>
+<p><a href="#actor_model">16. Акторная модель</a>
+   1. <a href="#model">Суть модели</a>
+   2. <a href="#erlang">Erlang и BEAM</a>
+   3. <a href="#elixir">Elixir</a></p>
+<h2 id="0"><a name="introduction"></a> 0. Введение</h2>
+<h3 id="_1"><a name="tend"></a> Тенденции развития вычислительных систем, обуславливающие необходимость применения распределённых (параллельных) методов вычислений. Примеры вычислительно ёмких задач из разных областей науки.</h3>
+<p>Отношения предок-поток значимым образом влияют на поведение процесса</p>
+<p>В случае потоков отношений таких не существует. Поток создался и независим, ему все равно на предка</p>
+<h3 id="simd-misd-smp-mpp"><a name="class"></a> Классификация параллельных систем (SIMD, MISD…, SMP, MPP)</h3>
+<p>Sisd single instruction single data</p>
+<p>Simd - одна инструкция над неск данными</p>
+<h3 id="sse"><a name="covr"></a> Современные высокопроизводительные системы: начиная от расширений SSE, через многоядерность к узлам кластеров</h3>
+<p>Sse (streaming simd extensions) -- Расширение процессора. Доп регистры с доп иструкциями</p>
+<p>Класс оптимизации: векторизация</p>
+<p>Больше строковых данных стало</p>
+<p>AVX advanced vector extension</p>
+<p>Неизвестная инструкция процессора</p>
+<h3 id="_2"><a name="amd"></a> Понятия ускорения, эффективности (закон Амдала)</h3>
+<p><img alt="Alt text" src="image.png" /></p>
+<h3 id="java-runnable-vs-thread"><a name="start"></a> Старт потока (Java): реализация Runnable vs наследование от Thread</h3>
+<p>extends лишает нас наследоваться от чего-то другого.</p>
+<h2 id="1-ipc"><a name="multiipc"></a> 1. Многопоточность или IPC</h2>
+<h3 id="ipc">Виды IPC</h3>
+<p>IPC — механизмы межпроцессного взаимодействия</p>
+<ul>
+<li>pipe</li>
+<li>shared memory — общий кусок оперативки</li>
+<li>socket — общение по сети</li>
+<li>file</li>
+<li>signal — по природе асинхронный механизм</li>
+</ul>
+<p>Преимущества многопоточности:</p>
+<ul>
+<li>быстрее создание (однако обычно мы просто в самом начале создаем все потоки что нужно и забываем про это)</li>
+<li>проще осуществлять обмен данными (меньше ошибок в итоге)</li>
+<li>быстрее обмен данными. Процессу соответствует какая-то страница памяти, которая подгружается. Все потоки одного процесса скорее всего находятся в одно этой странице. Потоки разных процессов гарантированно в разных страницах (надо подгружать)</li>
+</ul>
+<h3 id="ipc_1">Преимущества IPC:</h3>
+<ul>
+<li>надежность. В монолитных ядрах бОльшая надежность, если что-то упадет</li>
+<li>безопасность. На примере браузера: каждая вкладка это процесс. Если упала вкладка, то легче поднять. У js  с одной вкладки нет доступа к данным в другой вкладке</li>
+</ul>
+<h3 id="shmem">Сложности реализации shmem</h3>
+<p>Проблема: если процесс захватит примитив синхронизации и помер, никто другой не сможет больше захватить. Shmem решает эту проблему</p>
+<h2 id="2"><a name="thread_ending"></a> 2. Завершение потоков</h2>
+<p>Потоки ОС (posix)</p>
+<p>Самый низкоуровневый, который мы можем создать</p>
+<p>Типы связанности по силе:</p>
+<ol>
+<li>Дружественность</li>
+<li>Наследование</li>
+<li>Композиция</li>
+<li>Агрегация</li>
+</ol>
+<h3 id="_3">Корректное завершение потоков:</h3>
+<p>У потока нет обязательств завершиться. pthread_cancel выставляет потоку флаг, что надо завершиться</p>
+<p>В этом другом потоке после каких-то логических действий модно вызывать pthread_testcancel, которая выполнится если нас отменили и осуществит выход из потока</p>
+<p>Если хотим выполнить что-то после cancel: _cancel_push, добавит задачу в стек, который будет разматываться после окончания.
+_cancel_pop вытащить последнюю задачу из стеку сверху</p>
+<p>Если ручками вызывать testcancel, то не все так просто, потому что есть cancellation points, которые внутри себя вызывают testcancel</p>
+<h4 id="cancellation-points">Cancellation points</h4>
+<p>по сути все что вызывает cancel</p>
+<p>Если мы хотим, чтобы в какой-то момент нас не прерывали, то можно сделать disable_cancel, делаем что нам надо, потом enable_cancel</p>
+<h4 id="glibc">Примеры кода в glibc</h4>
+<p>int cancelhandling флаг в структуре, который позволяет отслеживать. Несколько флагов по битам по сути
+Структура cleanup содержит список указателей на функции, которые надо будет выполнить</p>
+<h4 id="interrupted-exception">Interrupted exception</h4>
+<p>Пусть есть два потока, один хочет достать из очереди два элемента
+Второй постоянно интерраптит первый
+Как нам точно достать? Вынесем логику взятия из очереди в отдельный поток и вызовем его.</p>
+<h3 id="posix-boost-java">Сравнение различных потоков (POSIX, boost, java)</h3>
+<p>posix/boost/java:</p>
+<ul>
+<li>создание: create/thread/Thread</li>
+<li>ожидание: join/join/join</li>
+<li>отмена: cancel/-/interrupt</li>
+</ul>
+<h3 id="_4">Проброс исключений между потоками</h3>
+<h2 id="3"><a name="primitives"></a> 3. Примитивы синхронизации</h2>
+<p>Примитивы синхронизации бывают разные: честные (падают в кернел спейс) и нечестные (не падают, спин лок)</p>
+<p>Зачем примитиву проваливаться в кернел: пришел первый поток, захватил. Второй пришел, пытается захватить.  У него получатся, значит он должен сообщить ядру, что он ожидает, а значит надо сообщить планировщику об этом, значит надо сделать какой-то системный вызов.</p>
+<p>Современные примитивы зачастую предпринимают несколько попыток захватить, прежде чем провалиться в кернел спейс.</p>
+<h3 id="_5">Необходимость синхронизации: простые гонки данных</h3>
+<h3 id="_6">Реализация примитивов синхронизации: алгоритм булочника</h3>
+<h3 id="_7">Виды мьютексов:</h3>
+<h4 id="_8">рекурсивные/нерекурсивные</h4>
+<p>рекурсивный если в рамках одного и того же потока можем захватывать мьютекс несколько раз</p>
+<p>Рекурсивный когда нужен: пусть есть класс вектор, внутри него мьютекс. И два метода: size + push_back. В обоих есть захват мьютекса. Во втором методе если размер какой-то определенный, то чето делаем дополнительно. Т.е. нам опять надо будет захватить мьютекс при сравнении размера.</p>
+<p>Как сделать то же самое, но нерекурсивно: все то же самое, но добавить приватные два метода unsafe аналогов. Всю логику переношу туда. В обычных методах блокироваться и вызывать unsafe методы.</p>
+<p>Что лучше: надо ориентироваться на:</p>
+<ul>
+<li>тестируемость. Второй вариант лучше с точки зрения тестирования, потому что логика работы с контейнером в одном методе, а многопоточное -- в другом (легче понять где мы упали)</li>
+<li>поддерживаемость. Легкость рефакторинга. Второй вариант лучше, потому что можем легко поменять логику работы контейенера или поменять сам мьютекс.</li>
+</ul>
+<p>Иногда говорят, что нерекурсивне примитивы быстрее.</p>
+<p>На практике рекурсивные нужно ооочень редко, в большинстве случаев код можно переписать с использованием нерекурсивных. + является то, что при нерекурсивном меньше вероятность ошибки (при освобождении, что не запутаемся).</p>
+<ul>
+<li>есть мьютекс с таймаутом. Это НЕ решение дедлоков. Нужно использовать только если в логике есть смысл через какое-то время бросать попытку захватить мьютекс.</li>
+</ul>
+<h4 id="readwrite">read/write</h4>
+<p>Можно захватывать только на чтение (тогда несколько читателей могут работать одновременно) и только на запись (когда приходит писатель, все читатели должны завершиться до захвата писателя).</p>
+<h4 id="spin">spin</h4>
+<p>крутимся в бесконечном цикле, пока не захватим блокировку (пока cas не сработает).</p>
+<p>активное ожидание на захвате. Не использовать если между захватом и освобождением какая-то длительная операция.</p>
+<h4 id="futex">futex</h4>
+<p>Fast userspace muTexes. Не предназначены для прямого использования разработчиком, используются под капотом другими мьютексами.</p>
+<h3 id="_9">Корректные захват/освобождение примитивов</h3>
+<p>рекомендуется использовать RAII</p>
+<p>Есть mutex, а есть condition, разные вещи.</p>
+<p><img alt="notify all внутри, чтобы дать гарантию об актуальности монитора" src="image-2.png" /></p>
+<p>Барьер:</p>
+<p><img alt="Alt text" src="image-3.png" /></p>
+<p>Здесь в 13 строчке нужен while, потому что мы должны перепроверять условие.</p>
+<p>Почему нельзя после 10 строчки отпустить мьютекс: пусть придет 9 поток, отпустит и заснет (не от wait). Придет 10 поток, увеличит счетчик, увидит, что счетчик достиг максимум и сделает broadcast всех, кто спит. Они проснутся, 9 поток вернется на исполнение и снова заснет. Причем его никто не сможет разбудить уже.</p>
+<p>Есть такие системные вызовы, для которых необязательно падать в кернел (время). Ядро само пеиодически в какую-то область памяти кидает какие-то значения, откуда можно их брать. Это оптимизация. Но от этого может страдать безопасность.</p>
+<h3 id="cas-">CAS-операции и атомики</h3>
+<p><img alt="Alt text" src="image-1.png" /></p>
+<p>Атомики под капотом юзают бесконечные циклы.</p>
+<h3 id="_10">Условные переменные:</h3>
+<p>использование wait/notify
+Spurious wakeups</p>
+<h3 id="thread-local-storage-tls">Thread Local Storage (TLS)</h3>
+<h2 id="4"><a name="sync_algos"></a> 4. Алгоритмы синхронизации</h2>
+<p>На примере односвязного списка. Работаем чистой многопоточкой на одной машине. Работаем на языке со сборщиком мусора.</p>
+<p>Node { data, next, id }</p>
+<p>Есть операции:</p>
+<ul>
+<li>add()</li>
+<li>remove()</li>
+<li>contains()</li>
+</ul>
+<h4 id="_11">Грубая</h4>
+<ol>
+<li>Обычный мьютекс</li>
+<li>Мьютексы на чтение (contains) и запись</li>
+</ol>
+<p>Блокируемся по всему списку.</p>
+<h4 id="_12">Тонкая</h4>
+<p>Добавим в каждую ноду свой примитив синхронизации (в джаве объект = уже синхронизация).</p>
+<div class="codehilite"><pre><span></span>В любой момент времени, для того чтобы иметь связь с любой структурой данных, имеет смысл обеспечивать захват хотя бы одного примитива синхронизации.
+</pre></div>
+
+
+<p>Поэтому лучше ходить блокироваться парами по списку.</p>
+<p><code>Мы не обеспечиваем потокобезопасность хранения данных в узлах, только безопасность узлов</code></p>
+<p><code>Лучше всегда захватывать элементы, у которых хоть как-то меняется состояние</code></p>
+<p>Что захватывать:</p>
+<p><img alt="" src="assets/20240125_145147_image.png" /></p>
+<ol>
+<li>При добавлении</li>
+<li>3 надо.</li>
+<li>7 не надо, потому что даже если кто-то перед нами что-то сделает с 7, то ничего плохого не прозойдет.</li>
+<li>При удалении</li>
+<li>3: если не захватим: один поток пришел удалять 7, заснул перед перекидыванием ссылки, пришел другой поток, подобавлял кучу элементов, проснулся первый, перекинул ссылку, новые элементы потерялись.</li>
+<li>7: первый поток удаляет, заснул. Поток второй перед ним подобавлял элементы после 7. Первый поток проснулся и перекинул ссылки, новые элемент пропали.</li>
+<li>9 не надо.</li>
+</ol>
+<p><code>Минус: если мы заблокировали 3, то все новые потоки не смогут пройти дальше, пока 3 не освободится</code></p>
+<h4 id="_13">Оптимистичная</h4>
+<p>То же самое, что и тонкая, только когда мы нашли две ноды (без синхронизаций), которые надо заблокировать, мы перед взятием можем же заснуть. Чтобы проверить, что все ок, мы должны проверить, что 3 все еще ссылается на 4 после взятия двух блокировок.</p>
+<p>Но проблема до взятия блокировок может быть еще в том, что и 3, и 4 удалили. Чтобы это проверить, возьмем две блокировки и дойдем еще раз с начала списка (без синхронизаций) до 3 и 4. Если дошли, значит элементы все еще есть.</p>
+<p><img alt="Alt text" src="image-6.png" /></p>
+<p>Есть смысл делать когда у нас быстро можно осуществить проход по структуре.</p>
+<h4 id="_14">Ленивая</h4>
+<p>То же самое, что и оптимистичная, только у каждой ноды есть флаг удаления. И когда поток удаляет, он сначала выставляет флаг и только потом удаляет. И тогда вместо прохода сначала проверяем флаг.  </p>
+<h4 id="orm">Неблокирующая (параллель с ORM)</h4>
+<ol>
+<li>Удаление: сначала CASом выставляем флаг удаления и если удачно, то CASом перекидываем ссылку. Если не получилось, то идем с самого начала.</li>
+<li>Добавление: CASом перекидываем ссылки</li>
+</ol>
+<h2 id="5"><a name="atomic_snaps"></a> 5. Атомарные снимки регистров</h2>
+<p>Регистр -- это ячейка памяти, в которую можно атомарно что-то записать/считать.</p>
+<p><img alt="Alt text" src="image-7.png" /></p>
+<p>Снепшот должен быть:</p>
+<ol>
+<li>Согласованным: значит, что когда-то он существовал.</li>
+<li>Актуальным: какое-то состояние, которое точно было после момента вызова взятия снепшота.</li>
+</ol>
+<h3 id="_15">Классификация алгоритмов:</h3>
+<h4 id="lock-free">lock-free</h4>
+<p>Гарантирует, что останавливая в произвольное время произвольное количество потоков, все остальные потоки точно завершат свою работу. Сложнее писать.</p>
+<p>В некоторых случаях, например, тонкая блокировка работает быстрее lock-free, когда у нас нет сильной нагрузки и мы успеваем взять-отдать блокировки без падения в kernel.</p>
+<p><code>Если алгоритм использует только CAS, то это не обязательно lock-free алгоритм. Например спин локи основаны на CAS, но это мьютекс</code></p>
+<p><code>Но если у нас lock-free алгоритм, то это значит, что мы используем CAS или что-то подобное</code></p>
+<h4 id="wait-free">wait-free</h4>
+<p>Гарантировать, что и читатель и писатель завершит свою работу за определенное количество шагов (зависящее от структуры) в любое время.</p>
+<h3 id="lock-free-snapshot">Lock-free snapshot</h3>
+<p>Проблема согласованного снепшота в том, что сначала взяли один снепшот, заснули, данные менялись, но в итоге стали такими же, как и до засыпания, взяли второй снепшот и он типа равен первому. Хотя по факту между двумя снепшота были действия, о которых мы не знаем.</p>
+<p>Решение: добавить версионирование, при каждом изменении регистра инкрементируем его версию.</p>
+<h3 id="wait-free-snapshot">Wait-free snapshot</h3>
+<h4 id="swmr">SWMR</h4>
+<p>При изменении регистра обязательно берём снепшот</p>
+<p>Взяли 1 снепшот. Взяли 2. Если они равны, то возвращаем 2.
+Если не равны, значит кто-то что-то записал (в 1 регистр например). Снепшот между 1 и 2 возвращать нельзя, потому что он мог быть взят до 1го (совсем протухший).</p>
+<p>Взяли 3 снепшот. Если 2 и 3 равны, то вернем 3.
+Если не равны, значит кто-то что-то сделал между 2 и 3 (например во 2 регистр). Его вернуть нельзя ибо этот снеп мог быть сделан до 1го</p>
+<p>Берем 4 снепшот. Если 3 и 4 равны, то возвращаем 4.
+Нет - если изменили 1 регистр, значит этот снепшот мог быть сделан не раньше чем 1.5 снеп. Значит можно его взять.</p>
+<p>Поскольку внесли изменения более 1 раза, значит снепшот более актуальный. </p>
+<p>Используют в планировщиках ОС жесткого реального времени (атомные станции). Гарант времени отклика системы жесткий.</p>
+<p><code>Любой lock-free алгоритм можно преобразовать в wait-free. Но это надо очень много памяти зачастую (кубических размеров)</code></p>
+<p>В wait-free писатели очень часто обязаны делать что-то еще, помимо своих записей, чтобы обеспечить гарант</p>
+<p><img alt="Alt text" src="image-10.png" /></p>
+<h4 id="mwmr">MWMR</h4>
+<p>Не получится в один регистр все записать. В отдельном регистре храним данные и id потока, который последний изменил. В другом регистре храним данные потока: снепшот и его view</p>
+<p>Не атомарны записи в оба регистра, о чем следует помнить.</p>
+<p>Мы должны наблюдать не 2, а 3 изменения регистров: если 3 раза встретили изменение, тогда снепшот актуален и согласован (а не 2 раза, как при swmr)</p>
+<p><img alt="Alt text" src="image-9.png" /></p>
+<h2 id="6"><a name="prog_mistakes"></a> 6. Ошибки || программирования</h2>
+<h3 id="_16">Основные ошибки многопоточного программирования</h3>
+<h4 id="data-race">Гонки данных (Data Race)</h4>
+<p>Нечто, что приводит к ошибкам из-за несогласованного, конкурентного доступа к оперативной памяти.</p>
+<ul>
+<li>Пусть копируем 64ное число двумя инструкциями по 32, значит в какой-то момент одну часть скопировали, а другую нет: получаем значение, которого никогда не существоало</li>
+<li>Пусть в бд есть какие-то объекты, которые мы загружаем. Пусть есть объекты a, b, с какими-то полями. Пусть объекту x присвоили а, а потом b и в этот момент кто-то читает x, которому скопировали только часть полей.</li>
+<li>пусть есть байт, который инкрементим (долго) в двух потоках. Может быть такое, что одновременно считали 0, одновременно инкрементировали и в итоге получили 1 (что нлеогично).</li>
+</ul>
+<p><em>Линеаризуемость</em> = корректность: если какое-то параллельное исполнение и мы можем подобрать какое-то последовательное исполнение из тех же операций, чтобы получить тот же результат, значит программа корректна. Если есть хотя одно, что результат не совпадает, то все плохо.</p>
+<p>Пример когда нельзя ленеаризовать: 1 поток читает, 2 поток прибавляет, 3 поток инкрементирует. считали 0, добавили 10, инкрементировали 1. Никак не линеаризовать.</p>
+<p><img alt="Alt text" src="image-4.png" /></p>
+<p>Защита от гонки (valgrind):</p>
+<ol>
+<li>Можно запоминать к какому конкретно блоку памяти был доступ из какого потока на чтение/запись и сообщать пользователю если он задетектил доступ из разных потоков без захвата хотя бы какого-то примитива синхронизации.</li>
+<li>Когда будет найдена гонка, но нее нет. Есть класс, с полем и конструктором (в котором инициализировали поле). В методе print создаем новый поток, в котором выводим это значение.</li>
+</ol>
+<p>В мейне создаем объект этого класса и вызываем print. Гонки не будет, но для valgrindа в конструкторе произошел доступ к полю из одного потока, а принт из другого</p>
+<p>Другой пример: создали все потоки. Только один поток готовит какие-то данные. В конце он сделает notifyAll и все другие потоки будут читать эти данные (только после нотифая, гонки нет).</p>
+<p>Гонки данных тяжко детектятся :(</p>
+<h4 id="deadlock">Взаимная блокировка (Deadlock)</h4>
+<p>Несколько способов получить:</p>
+<ol>
+<li>
+<p>Использование нерекурсивных примитивов:</p>
+</li>
+<li>
+<p>когда дважды один и тот же примитив пытаемся захватить</p>
+</li>
+<li>Реакция потока на сигнал.</li>
+</ol>
+<p>пусть мы написали обработчик сигнала. Когда придет сигнал, он может быть обработать в потоке: main/новом/который подписан на сигнал/случайном. Правильно: в случайном потоке. Почему не обязательно в том, который подписан: потому что мы это можем сделать в таком потоке, который может не существовать когда сигнал придет. Хотя по идеи можно сказать потоку, чтоб он не обрабатывал сигнал. Так сделать с каждым потоком и сигнал обработается тем потоком, которому последнему не успели сказать "нельзя". Но это тоже бессмысленно.</p>
+<p>Тогда может быть ситуация: пусть в хендлере сигнала мы что-то делаем с вектором. Но перед этим, поток, который был случайно выбран для обработки сигнала, спрашивал размер вектора и был заблокирован нерекурсивным примитивом. После блокировки он перекинулся на хендлер. Получаем дедлок на попытке захватить притив синхронизации из случайного потока, когда мы сами стали этим случайным потоком.</p>
+<p>Решение: не писать сложную логику в обработке сигналов. Никаких syscallов и прочего, а просто, например, выставлять какой-то флаг, который будет везде проверяться.</p>
+<ol>
+<li>Перекрестный дедлок</li>
+</ol>
+<p>в одном потоке в одном порядке захватываем притив, в другом -- в другом.</p>
+<p>Как исправить: обеспечить глобальный одинаковый порядок захвата примитивов (по приоритету, например).</p>
+<p>Как найти: через дебаг. С помощью valgrind можно найти ошибки потоков (неправильный порядок локов в том числе). Он находит все локи и пытается смоделировать дедлоки (могут быть ложные срабатывания). НО: он не найдет точно дедлоки на спинлоках, потому что мы просто крутимся в цикле, без syscallов, не найдет когда в хендлере сигнала захватываем.</p>
+<ol>
+<li>Блокировки при fork многопоточных программ.</li>
+</ol>
+<p>Пусть есть процесс, в нем два потока и есть примитив синхронизации. Пусть второй его захватил. Пусть первый делает форк (создаем копию процесса на момент форка). Они не связаны ничем кроме отношения предок-потомок. В копии есть копия примитива, захваченный. После форка у нас будет один поток в копии. Почему: это единственный поток, откуда мы знаем как запустить детерменированно и одинаково, потому что если все потоки копировать, то мы копировать будем в случайном порядке, с контекстами, взятыми в случайное время и т.д.</p>
+<p>Скопированный поток попытается захватить примитив. Он уже захвачен (и не освободится, потому что это просто копия захваченного притива). Получаем дедлок.</p>
+<p>Если поток с захваченным примитивом умер, то значит, что он оставил какие-то данные, ассоциированные с этим примитивом. И лучше пусть эти данные не достанутся никому, чтобы обеспечить детерменированность.</p>
+<p>Решение проблемы: pthread_atfork(f<em>,g</em>,h<em>). Принимает три указателя на три функции (регистрация трех каллбеков, выполняются перед форком) Гарантирует выполнение f</em> в рамках первого процесса до форка, g<em> в рамках первого процесса после форка и h</em> в рамках второго процесса после форка. Тогда в f захватываем все примитивы что нам нужны (чтобы другие потоки не смогли успеть захватить), а в g и h освободить их.</p>
+<h4 id="_17">Инверсия приоритетов</h4>
+<p>Пусть есть система, в которой есть приоритет процессов (пусть одноядерная система). Есть 3 потока с 3 разными приоритетатми A, B, C, разделяющие один пимитив синхронизации, который разделяют А и В.</p>
+<ul>
+<li>В первый момент времени мьютекс не заблокирован.</li>
+</ul>
+<p>Поток В находится в состоянии исполняюсь (готов/исполняется).</p>
+<p>Поток С находится в состоянии заблокирован (еще не готов исполняться) (заблок/готов/испол).</p>
+<p>Поток А находится в состоянии заблокирован (заблок/исполн).</p>
+<ul>
+<li>В делает лок примитива, остальные потоки заблокированы.</li>
+<li>поток А готов к исполнению и т.к. у него приоритет выше, он начинает исполняться.</li>
+</ul>
+<p>поток С тоже готов, но т.к. система одноядерная, а уже исполняется поток А, он в состоянии готов к исполнению</p>
+<p>поток В становится готовым к исполнению из-за приоритета. Примитив по прежнему заблокирован.</p>
+<ul>
+<li>поток А пытается захватить примитив, не может, переходит в состояние заблокирован</li>
+</ul>
+<p>поток С по приоритету начинает работать</p>
+<p>В не исполняется. Примитив захвачен</p>
+<p>Такая ситуация может быть бесконечно, потому что А и В заблокированы, в итоге постоянно исполняется С, у которого произошла фактически инверсия приоритета. В итоге С исполняется больше, чем А, хотя не должно быть так.</p>
+<p><img alt="Alt text" src="image-5.png" /></p>
+<p>Что делать: поднять приоритет потоку В, чтобы он отпустил блокировку.</p>
+<h4 id="aba">Проблема ABA</h4>
+<p>Специфично только для lock-free алгоритмов. Пусть пишем на нативном языке (без сборщика мусора и с прямым доступом к памяти). Есть стек. На вершине его лежит А.</p>
+<p>Есть операция push, которая складывает на вершину стека толькое если там лежит что-то.</p>
+<p>Как работает эта операция: считали вершину. Сделали проверку что там лежит и если что добавляем.</p>
+<p>Пусть считали топ, сделали проверку и заснули.</p>
+<p>Пришел второй поток, сделал поп и пуш В. Поскольку мы используем какие-то аллокаторы, то они в основном оптимизирующие, значит с великой долей вероятности мы после пуша вершина будет указывать на ту же область памяти, что и А, только данные там будут лежать В.</p>
+<p>Просыпается первый поток и делает CAS, чтоб проверить, что топ не поменялся. А т.к. адреса одинаковые у топа нового и его старого, то КАС пройдет, хотя там другие данные.</p>
+<p>Умные указатели не помогут, потому что не совсем понятно, что менять первее: счетчик указателей или элемент.</p>
+<h5 id="smr">Решение SMR</h5>
+<ul>
+<li>tagged ptr. Адрес 64, указатель 48, значит 16 бит можно каждый раз инкрементировать, когда, когда кто-то обращается к объекту. Т.е. фактически у нас каждый раз будут разные адреса (грубо говоря, из-за инкрементации) и КАС не пройдет.</li>
+<li>написать свой сборщик мусора, который бы решал эту проблему.</li>
+<li>hazard pointers. Для каждого потока достаточно будет таких указателей = количеству примитивов, которые надо захватывать при тонкой блокировке (инвариант структуры). </li>
+</ul>
+<h2 id="7"><a name="memory_model"></a> 7. Модель памяти</h2>
+<h3 id="_18">Пример ошибки в ядре ОС</h3>
+<h3 id="_19">Устройство кэшей процессора</h3>
+<p>Два кэша и один брокер. Первый кэш хочет получить 1 из памяти, подгружается через брокер 1 в линейку кэша. Инкрементирует ее. Второй кэш тоже хочет получить 1. Но бркоер понимает, что эта область памяти уже есть в другом кэше, поэтому он скопирует ту линейку кэша из первого кэша во второй.</p>
+<h3 id="mesi">Пример на протоколе MESI</h3>
+<p>Предполагает добавление к линецке кэша состояние.</p>
+<p>Состояние, когда в линейке кэша нет ничего -- invalidated</p>
+<p>Пришла единица -- excluzive. Т.е. данные находятся только в одном кэше. И значение еще и не модифицировано (не надо синхронизировать с памятью).</p>
+<p>Изменили что-то -- modified. Значит, что когда будет синхронизировать с памятью, то надо будет записать новое значение.</p>
+<p>Когда еще с каким-то кэшом поделились линейкой -- shared. Т.е. данные находятся в больше чем одном кэше процессора.</p>
+<p>Когда во втором кэше мы поменяли значение, то шлем всем ядрам специальный запрос: read invalidate. Т.е. другие кэши должны будут инвалидировать свое значение и сделать запрос read, считав тем самым наиболее актуальное значение у какого-то кэша (у нашего скорее всего, второго). Когда все другие ядра обработали этот запрос, они шлют запрос invalidate actual (???). А ядро, которое послало запрос чтоб все обновились -- ждет подтверждения от других ядер.</p>
+<p>Из минусов: ядро-иниициатор ждет, а другие ядра должны все бросить и начать отвечать.</p>
+<p>Для решения этого ввели две новые абстракции (аппаратные элементы): invalidate queue, store buffer. Тогда, когда второе ядро отправляет запрос, то оно просто скидывает в store buffer свою линейку и продолжит работать, периодически проверяя вернулись ли все запросы. Запрос этот другим ядрам приходит в invalidate queue. Эта очередь работает не совсем честно: запросы оттуда будут выполнены только тогда, когда ядру будет удобно, а не сразу.</p>
+<p>Причем ack будет отослан не тогда, когда запрос выполнится, а когда только положится (чтоб ядро-инициатор не сидел грустил).</p>
+<p>Есть модификации MOESI</p>
+<h3 id="storeload">Барьеры памяти (store/load)</h3>
+<p>Зачем нужны вообще</p>
+<div class="codehilite"><pre><span></span>f() {
+   a=1;
+   b=1;
+}
+</pre></div>
+
+
+<p>Кэш 1го ядра содержит</p>
+<p>a(S)</p>
+<p>b(E)</p>
+<div class="codehilite"><pre><span></span><span class="nv">g</span><span class="ss">()</span><span class="w"> </span>{
+<span class="w">   </span><span class="k">while</span><span class="ss">(</span><span class="nv">b</span><span class="o">==</span><span class="mi">0</span><span class="ss">)</span><span class="w"> </span><span class="k">continue</span>
+<span class="w">   </span><span class="nv">assert</span><span class="ss">(</span><span class="nv">a</span><span class="o">==</span><span class="mi">1</span><span class="ss">)</span>
+}
+</pre></div>
+
+
+<p>Кэш 2го ядра:</p>
+<p>a(S)</p>
+<p>Порядок операций:</p>
+<ol>
+<li>
+<p>выполнили a=1 =&gt; линейка кэша уходит в store buffer и отправляется запрос read invalidate</p>
+</li>
+<li>
+<p>b=1 =&gt; b(M)</p>
+</li>
+<li>
+<p>while() выполнился =&gt; отправили read</p>
+</li>
+<li>
+<p>в 1 ядро пришло read =&gt; b(S)</p>
+</li>
+<li>
+<p>пришло во 2 ядро b =&gt; вышли из цикла</p>
+</li>
+<li>
+<p>assert() падает</p>
+</li>
+<li>
+<p>2 ядро начинает отрабатывать invqueue =&gt; отослали назад ack</p>
+</li>
+<li>
+<p>1 ядро очистило store buffer</p>
+</li>
+</ol>
+<p>В итоге вроде как все отослали, но второе ядро в итоге видит изменения в обратном порядке, сначала b и только потом a</p>
+<p><img alt="Alt text" src="image-15.png" /></p>
+<p>Проблема на уровне исполнения.</p>
+<p>Все барьеры применяются только на одном ядре! Налаживаем частичный порядок работы (с кешами) в каждом из потоков и таким образом в целом что-то хорошее выходит.</p>
+<p>Барьер памяти — просто ассемблерная инструкция ,которая применяется к одному из процессов smp_rmb — read memory barrier, smp_rwb, smp_rmb — read &amp; write. И предлагает ему честно ждать одну из очередей.</p>
+<p><code>X_Y</code></p>
+<p>Все операции типа х до барьера выполнятся гарантированно до всех операций типа у после барьера.</p>
+<p>В итоге возможно 4 разных типа барьера памяти:</p>
+<ul>
+<li>LoadLoad</li>
+<li>LoadStore</li>
+<li>StoreLoad</li>
+<li>StoreStore</li>
+</ul>
+<p>В примере выше на 1 ядре нам надо обеспечить гарантию записи, значит надо использовать StoreStore. Это значит, что мы не будем выполнять b=1 пока не дождемся всех ack про а.</p>
+<p>На 2 ядре мы только читаем, значит надо использовать LoadLoad</p>
+<p><img alt="Alt text" src="image-16.png" /></p>
+<h3 id="acquirerelease">Acquire/release семантика</h3>
+<p>Барьеры объединили в группы</p>
+<ol>
+<li>
+<p>Acquire группа = LoadLoad, LoadStore, потому что что-то читаем</p>
+</li>
+<li>
+<p>Release = LoadStore, StoreStore, потому что что-то отпускаем в конце.</p>
+</li>
+<li>
+<p>StoreLoad = ни в какой группе, по сути</p>
+</li>
+</ol>
+<p><img alt="Alt text" src="image-17.png" /></p>
+<p>Почему семантика так называется: потому что по сути мы между acsquire и release захватываем ресурсы, и код оттуда никуда не может перейти. Мы как бы захватываем и потом отпускаем.</p>
+<p><img alt="Alt text" src="image-18.png" /></p>
+<h3 id="sequential-consistency">Модели памяти: Sequential consistency…</h3>
+<p>Модель памяти — набор барьеров, которые автоматически гарантирует конкретная архитектура или и иной уровень абстракции (наиболее высокий уровень абстракции).</p>
+<p>Модель памяти может гарантироваться:</p>
+<ul>
+<li>архитектурой процессора</li>
+<li>фреймворком</li>
+<li>языком программирования высокого уровня (должна гарантировать на всех машинах независимо от модели памяти архитектуры, на котором будет исполняться код)</li>
+</ul>
+<h4 id="sequential-consistency_1">Sequential consistency</h4>
+<p>Любая операция чтения/записи приводит к применению всех 4 барьеров.</p>
+<p>Процессор предоставляет какую-то модель памяти. ЯП тоже предоставляет какую-то можель памяти. ЯП гарантирует эту модель вне зависимости от процессора.</p>
+<p>Можно представить, что тогда у ядер нет store buffer / invqueue, он всегда работает честно</p>
+<h4 id="strong-ordering-tso">Strong ordering (TSO)</h4>
+<p>Применяются 3 барьера, которые входят в семантику acquire/release. Любая операция чтения/записи обеспечивает acquire/release. В архитектуре применены по умолчанию.</p>
+<p>Пример: ожидаем чтобы хоть какой-то ассерт упал</p>
+<p><img alt="Alt text" src="image-19.png" /></p>
+<p>TSO этот случай не покроет.</p>
+<p>amd64/x86_64</p>
+<h4 id="weak-ordering">Weak ordering</h4>
+<p>Заставляет явно задумывать о всех 4 барьерах.
+ARMv7</p>
+<h4 id="super-weak">Super weak</h4>
+<p>В отличие от weak, здесь есть возможность перестановки инструкций зависимых по данным в одном потоке</p>
+<p>Например:</p>
+<div class="codehilite"><pre><span></span>int* x;
+x = now int(20);
+*x=5;
+</pre></div>
+
+
+<p>2 и 3 строчки могут переставляться</p>
+<p>Alpha</p>
+<h3 id="_20">Примеры</h3>
+<ol>
+<li>JRE </li>
+</ol>
+<p>При работе с volatile компилятор в байткод анализирует код и ставит один из барьеров. Затем для каждой архитектуры оно реализуется по-своему.</p>
+<p>Реализует слабую модель памяти.</p>
+<ol>
+<li>Нативные ЯП</li>
+</ol>
+<p>По умолчанию sequential consistency. Можно указывать какую модель памяти использовать(пеедать как параметр в какой-то там атомик).</p>
+<p>Можно без атомиков явно взять и поставить барьер памяти посередине кода.</p>
+<ol>
+<li>Как достичь максимальной производительности:</li>
+</ol>
+<p>Пример:</p>
+<p>isReady — атомик флаг</p>
+<p>Первый поток:</p>
+<div class="codehilite"><pre><span></span>void f(){
+    data = 42;
+    //StoreStore -- release
+    ready.store(true, ?);
+}
+</pre></div>
+
+
+<p>Второй поток:</p>
+<div class="codehilite"><pre><span></span><span class="nb nb-Type">void</span><span class="w"> </span><span class="n">g</span><span class="p">(){</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ready</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="err">?</span><span class="p">)){</span>
+<span class="w">        </span><span class="o">//</span><span class="n">LoadLoad</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">acquire</span>
+<span class="w">        </span><span class="nb">assert</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Так можно достичь максимальной производительности.</p>
+<ol>
+<li>
+<p>Неявное использование барьеров:</p>
+</li>
+<li>
+<p>при захвате/освобождении примитивов: внутри него есть флаг, который разделяется, для которого нужен барьер</p>
+</li>
+<li>При разных syscallах. При смене контекста, когда планировщик снимает поток с исполнения, применяются все барьеры, потому что следующему потоку неинтересно получить инвалидацию от предыдущего потока, поэтому надо все подчистить.</li>
+<li>atomic (lock-free алгоритмы и т.д.) применяют их явно.</li>
+<li>volatile в java — способ явного указания для использования барьеров памяти. В с++ volatile никакого отношения к барьерам памяти не имеют.</li>
+</ol>
+<h2 id="8"><a name="profiling"></a> 8. Профилирование многопоточных приложений</h2>
+<h3 id="_21">Средства анализа производительности</h3>
+<p>Утилита time
+Intel Parallel Studio
+Valgrind (модули callgrind, cachegrind)</p>
+<h3 id="_22">Пример поиска узких мест</h3>
+<h3 id="cpi">Профилирование промашек по кэшу и метрика CPI</h3>
+<h2 id="9-flat-combining"><a name="FC"></a> 9. Flat-Combining</h2>
+<p>Пусть есть какая-то сложная структура с добавление/удалением и прочим операциями.</p>
+<h3 id="flat-combining">Схема Flat-Combining</h3>
+<p>Добавим объект FC, который агрегирует структуру данных. Извне предоставляет интерфейс доступа нехарактерный для самой структуры, типа doOperation, который будет добавлять в этот объект необходимую операцию.</p>
+<p>Сначала регистрируем поток в объекте, внутри которого есть список публикаций других операций, которые хотят другие потоки сделать со структурой.  Одна нода такого списка соответствует списку операций для одного потока. Причем хранится этот список с TLS (thread local storage)</p>
+<p>При doOperation мы публикуем операцию в TLS, так что внутри объекта операция будет сразу же видна.</p>
+<p>Далее пытаемся захватить примитив, который один на весь объект (без разницы какого именно типа). Если получается, то становимся потоком-combiner и выполняем все операции из списка за все потоки. Иначе -- ждем, пока или получим лок или кто-то за нас выполнит операцию.</p>
+<p>Используется в основном если надо в разы повысить производительность, как один из инструментов.</p>
+<h3 id="_23">Возможные оптимизации за счёт интерференции операций</h3>
+<h3 id="lock-free-michael-scott">Сравнение производительности с lock-free очередью Michael &amp; Scott</h3>
+<p>При 24 потока производительность намного лучше, чем lock-free очередь.</p>
+<p><img alt="Alt text" src="image-12.png" /></p>
+<p>Количество проваленных касов на операцию:</p>
+<p><img alt="Alt text" src="image-13.png" /></p>
+<p>Намного меньше, потому что касов в FC меньше.</p>
+<p>Главное преимущество:</p>
+<p><img alt="Alt text" src="image-14.png" /></p>
+<ol>
+<li>
+<p>Количество промашек по кэшу: когда идет работа над структурой в рамках одного потока лучше, потому что не надо подгружать ничего.</p>
+</li>
+<li>
+<p>Можно сокращать пуш и поп, например (аннигиляция операций).</p>
+</li>
+<li>
+<p>Интерфецируется комбайнер. Если выполняем мало операций, т.е. используем мало предоставленный квант времени и ресурсы, то нас может планировщик урезать. Иначе -- наоборот могут дать больше ресурсов.</p>
+</li>
+</ol>
+<h2 id="10-rcu"><a name="rcu"></a> 10. RCU</h2>
+<h3 id="rcu">Суть RCU и синхронизация на эпохах</h3>
+<h3 id="kernel-space-rcu">Kernel-space RCU</h3>
+<h3 id="user-space-rcu">User-space RCU</h3>
+<h2 id="11"><a name="tm"></a> 11. Транзакционная память</h2>
+<p>locking, проблемы:</p>
+<ol>
+<li>Сложность осуществления атомарных операций (хэш таблицы).</li>
+<li>нет связи ресурс-примитив</li>
+<li>сложность реализации cas</li>
+<li>сложность контроля жизни</li>
+<li>инверсия приоритетов</li>
+</ol>
+<p>транзакцию начинаем</p>
+<p>Пусть есть приложение и ORM  и БД. Хотим внестри изменение, ORM делает запрос select в бд, возвращает в приложение. Меняем данные, отдаем ORM, которое сначала опять сделает select, чтобы проверить что между первым селектом ничего не изменилось</p>
+<p>Транзакция начинается в момент второго селекта.</p>
+<p>Выглядит как высокоуровневый кас</p>
+<p><img alt="Alt text" src="image-8.png" /></p>
+<h3 id="transactional-memory">Идея transactional memory</h3>
+<p>Идея та же, только на уровне памяти: кто-то должен выступать в качестве ORM между приложением и RAM</p>
+<h4 id="software-transactional-memory">Software transactional memory</h4>
+<p>транзакционная память есть в хаскелле (впервые). Реализована прямо по статье</p>
+<p>из плюсов:</p>
+<ol>
+<li>нет локов</li>
+<li>описываем ЧТО защищаем, а не КАК</li>
+<li>есть контроль: откат, повтор</li>
+<li>улучшенная утилизация ресурсов.</li>
+</ol>
+<h4 id="hardware-transactional-memory">Hardware transactional memory</h4>
+<p>Ограничение, что транзакция завершится в рамках одного кванта времени (выделенного времени на исполнение процесса ОС) и ограничение на размер кэша.</p>
+<p>Transactional synchronization extention (TSX)</p>
+<h3 id="_24">Преимущества и круг задач</h3>
+<p>в основном в академических исследованиях.</p>
+<p>В джаве в последних версиях включена (по умолчанию).</p>
+<p>В промышленности использование сомнительно.</p>
+<h3 id="htm">Реализация HTM на линейках кэша</h3>
+<p>Линейке кэша выставляется бит, когда начинается транзакция, когда любое другое ядро работает тоже с этой линейкой кэша и вносит изменения, то остальные ядра понимают, 
+что с этой линейкой кэша, которая находится в транзакции, что-то сделали, значит транзакцию надо отменить.</p>
+<h3 id="lock-teleportation">Lock teleportation</h3>
+<p>Пример подхода использования транзакционной памяти в гибриде с еще чем-то.</p>
+<p>Можно навесить память при fine-grained блокировке (список). Захватили элемент, начинаем транзакцию, перемещаемся на некоторое кол-во элементов вперед без синхронизации, захватываем элемент куда пришли. Если транзакция завершилась, значит никаких изменений не было внесено, память на этом участке не трогали, можно двигаться дальше. Иначе -- транзакция отменилась, кто-то другой внес изменения (даже если просто захватил примитив), начинаем с последнего удачно захваченного элемента. Ломает запись, а не чтение. </p>
+<p><img alt="Alt text" src="image-11.png" /></p>
+<p>При неудаче в классическом подходе уменьшаем размер в ддва раза, на который мы прыгаем вперед. А если удача, то увеличиваем на 1.</p>
+<p>По аналогии с TCP, который подстраивается под пропускную способность.</p>
+<h2 id="12"><a name="async"></a> 12. Асинхронный ввод/вывод</h2>
+<h3 id="_25"><a name="block"></a> Блокирующий/неблокирующий</h3>
+<p>Есть две независимые классификации: </p>
+<ul>
+<li>блокирующий. <code>read(buf, 1024)</code> -- выйдем из этой функции когда появятс данные, иначе -- заблокируемся в ожидании.</li>
+<li>неблокирующий -- устанавливаем дескриптору ресурса флаг non-block. Тогда когда мы вызываем read мы вернем 0 если нет данных и выйдем из функции.</li>
+</ul>
+<h3 id="_26"><a name="sync_async"></a>Синхронный (реактор)/асинхронный (проактор)</h3>
+<p>Сигналы по природе асинхронны, потому что мы не знаем когда нам придет ответ или когда на сигнал отреагируют. В этом по сути и суть асинхронщины: мы не знаем когда у нас придут данные.</p>
+<h4 id="proactor"><a name="proactor"></a> Шаблон Proactor</h4>
+<p>Описывает, каким образом нам придет коллбек.</p>
+<p>Когда кто-то начинает асинхронную операцию, он называется <code>Initiator</code>. Он выполняет создание асинхронной операции (<code>.async_read()</code>). Инициатором никогда не будет потом-демультиплексор. Это какой-то другой поток.</p>
+<p>Чтобы обработать данные, которые инициатору когда-то там придут назад надо создать обработчик коллбека: <code>completion handler</code>.</p>
+<p>Асинхронная операция передается в <code>async operations processor</code>: ядро асинхронного ввода-вывода, из него получаем очередь событий <code>event queue</code>, которые произошли на тех дескрипторах ресурсов, которые были в асинхронных операциях, которые мы заказали. Очередь содержит в себе тип операции <code>async op</code> и <code>completion handler</code> соответствующий. Т.е. когда нам пришли данные каким-то магическим образом, то этот процессор данные вместе с соответсвующей операцией кладет в очередь событий.</p>
+<p>Затем сущность <code>event demultiplexor</code> разгребает эту очередь. Может состоять из нескольких потоков</p>
+<p>Непосредственно <code>Proactor</code>, после того как <code>event demultiplexor</code> вытащил из очереди, вызывает функцию <code>completion handler</code>а, которая пришла через очередь событий и была демультиплексирована <code>event demultiplexor</code>ом. Обычно это наш код, поэтому он вне фреймворка. Вырожденная сущность, которой может и не быть.</p>
+<p>Часто внутри колбека вызывается другая асинхронная функция и <code>Proactor</code> становится инициатором. Потому что обычно мы подписываемся только на чтение одной порции данных. Поэтому колбек подписывается повторно.</p>
+<p><img alt="Alt text" src="image-21.png" /></p>
+<p><em>Почему в асинхронных фреймворках обычно подписываемся только на одну асинхронную операцию, а не на несколько сразу?</em></p>
+<p>UDP сокет datagram. Мы точно отправили за 1 send 1400 байт. Есть ли гарантия, что мы строго за одну операцию чтения получим либо все данные, либо ничего? Да, гарантируется протоколом.</p>
+<p>А для TCP stream? Нет. Обычно в TCP приходится помимо данных еще и отправлять размер данных.</p>
+<p>Поэтому в демультиплексере пришлось бы учитывать еще и порядок обработки! Так как пришли и обрабатывались одновременно несколько частичек одного и того же сообщения. И надо было бы вручную определять в каком порядке что обрабатывать, что не предусмотрено фреймворком по умолчанию.
+Поэтому на сообщения одного и того же сокета, одного типа обрабатывать не получилось бы.</p>
+<p>СОКЕТЫ — это просто обертки над портами. Смотрим tcp сервер</p>
+<p>На серверном сокете делает асепт. Когда подключается клиент — создается конкретный сокет с этим клиентом.</p>
+<h4 id="async-operations-processor"><a name="aop"></a> Реализация async operations processor</h4>
+<p>Существует 2 возможные реализации:</p>
+<h5 id="_27"><a name="func_mult"></a> Функции мультиселектор</h5>
+<p>Функция, которая принимает массив дескрипторов и одновременно проверяет наличие событий на этих дескрипторах.</p>
+<p>Примеры таких функций:</p>
+<ol>
+<li>select -- принимает количество дескрипторов</li>
+<li>poll</li>
+<li>epoll</li>
+<li>kqueue</li>
+</ol>
+<p>Зачастую исполняются в отдельном потоке</p>
+<p>В этих функциях как бы заранее говорим на какие типы событий мы подписываемся на каком сокете.</p>
+<p>Эти функции — системные вызовы (как и обычный read), но обрабатывают сразу кучу сокетов за раз.</p>
+<p>Происходит оптимизация за счет того что дескрипторы объединяются в массивы (???).</p>
+<p>Можно оптимизировать чтение через dev/epoll</p>
+<h5 id="_28"><a name="OS"></a> ОС</h5>
+<p>Иногда часть ОС предоставляют свой интерфейс для этой задачи. Linux, например, AIO. И логика селекторов спускается на уровень ядра ОС. Правда, данные из ядра ОС нужно получать экзотически (сигналы и их обработку и т.д.)</p>
+<p>Reactor — часть async Op processos, которая не связана с Async</p>
+<ul>
+<li>передаем дела фреймворку, снижает количество системных вызовов</li>
+</ul>
+<h3 id="_29"><a name="async_libs"></a> Библиотеки асинхронного ввода/вывода</h3>
+<p>Проблема:</p>
+<p><img alt="Alt text" src="image-22.png" /></p>
+<p>Создаем для каждого клиента новый поток.</p>
+<p>Что происходит:</p>
+<p><img alt="Alt text" src="image-23.png" /></p>
+<p>Что делает новый поток:</p>
+<p><img alt="Alt text" src="image-24.png" /></p>
+<p>В итоге много системных вызовов, но бОльшая часть времени тратится на переключение контекста. Новые потоки будут спать пока не придут данные, главный поток будет спать, пока не придет новый клиент и пр.</p>
+<p>Поэтому когда мы пишем асинхронный код и максимизируем утилизацию конкретных потоков демультиплексора, которые постоянно выполняют только готовые операции (а в других случаях спят), то мы таким образом уменьшаем количество переключений контекста</p>
+<p><img alt="Alt text" src="image-25.png" /></p>
+<p>Минусы:</p>
+<ul>
+<li>сложнее спроектировать.</li>
+<li>нужно обеспечить безопасный шеринг объектов</li>
+<li>код должен быть высокого качества.</li>
+</ul>
+<h4 id="_30"><a name="async_server"></a> Асинхронный сервер:</h4>
+<p><img alt="Alt text" src="image-26.png" /></p>
+<p>Внутри лямбды вызываем снова <code>async_accept</code> чтоб обработать следующего клиента и обработку сокета.</p>
+<h4 id="_31"><a name="coroutines"></a> Корутины</h4>
+<p>Корутины за нас формируют коллбеки, в итоге по сути формируется код асинхронного сервера</p>
+<p><img alt="Alt text" src="image-27.png" /></p>
+<h2 id="13"><a name="linear"></a> 13. Линеаризуемость</h2>
+<h3 id="_32">Понятие линеаризуемости</h3>
+<p>Когда результат исполнения параллельного кода соответствует какому-то хотя бы одному последовательному исполнению.</p>
+<h3 id="lock-free-trieber">Lock-free стек Trieber</h3>
+<h3 id="_33">Пример на очередях</h3>
+<h3 id="lock-free-michael-scott_1">Lock-free очередь Michael &amp; Scott</h3>
+<p>Имеем два указателя на голову и хвост. Голова указывает на нулл указывает. </p>
+<p>При добавлении касом тейл указывает на новую ноду. И при перемещении на новый тейл тоже касом каждый поток, который делает вставку тоже проверяет, надо ли пофиксить хвост и при необходимости фиксит. Благодаря этому мы исключаем ситуацию, когда перекладываем ответственность за передвижение хвоста только на поток, который добавляет. Соответственно исключаем ситуацию, когда добавляющий поток заснул надолго и оставил неправильный тейл.</p>
+<p>При добавлении просто делаем один кас, перекидываемый голову на элемент вперед.</p>
+<p>При такой стратегии добавления нод гарантируется, что хвост не будет отставать от реального хвоста не более чем на 1 ноду. Причем если нам удалось добавить к хвосту новую ноду, то нам без разницы результат перекидывания хвоста на новую ноду, потому что вдруг кто-то другой уже добавил что-то еще и перекинул за нас хвост.</p>
+<p>Получаем бОльшую производительность.</p>
+<h3 id="_34">Точки линеаризации</h3>
+<p>Зачастую кас, на основе которых принимаем решение о линеаризуемости.</p>
+<h3 id="relaxed-skiplist">Relaxed SkipList</h3>
+<h2 id="14-openmp"><a name="openmp"></a> 14. OpenMP</h2>
+<h3 id="_35">Архитектура работы через директивы препроцессора</h3>
+<h1 id="pragma-omp-parallel">pragma omp parallel</h1>
+<p>Сгенерирует код, который определит кол-во ядер и запустит код в {} в том количестве потоков, сколько ядер. Код в {} выделит в отдельную функцию, которую запустит и в конце все заджоинит</p>
+<p>for -- распараллелит форик (несложный)</p>
+<h3 id="_36">Параллельные секции</h3>
+<p>section - каждая секция в отдельном потоке. Но есть проблема если одноядерная архитектура, а секций две. (producer-consumer)</p>
+<h3 id="_37">Области видимости переменных</h3>
+<p>Область видимости по дефолту shared</p>
+<p>Private</p>
+<p>reduction(op:s) - распараллелит и после выполнения выполнит op надо локальной s из главного потока</p>
+<h3 id="_38">Ограничения</h3>
+<p>master {} код внутри выполнится только в одном потоке, для других потоков этот код не сгенерится</p>
+<h3 id="_39">Миграция вычислений</h3>
+<p>offload главное направление, отправить вычисления на внешнее устройство.</p>
+<p>В промышленном программировании лучше не надо.</p>
+<h2 id="15-intel-tbb"><a name="tbb"></a> 15. Intel TBB</h2>
+<h3 id="_40">Алгоритмы</h3>
+<p>Parallel do</p>
+<p>Pipeline</p>
+<h3 id="_41">Аллокаторы</h3>
+<p>Cache aligned allocator - одна структура равна одной линейке кэша (32/64). Решение проблемы false sharing</p>
+<p>Scalable allocator - для каждого потока выделяется большой участок памяти</p>
+<h3 id="_42">Деревья задач</h3>
+<h3 id="work-stealing">Особенности планирования (work stealing…)</h3>
+<h3 id="flow-graphs-bpel">flow graphs (параллель с BPEL)</h3>
+<p>Flow graph - позволяет строить дерево передачи данных между задачами. Позволяет разгрузить обработку данных</p>
+<h2 id="16"><a name="actor_model"></a> 16. Акторная модель</h2>
+<p><img alt="Проблемы" src="image-28.png" /></p>
+<p>Хочется ограничить взаимодействие потоков и как-то абстрагироваться от аппаратной реализации.</p>
+<h3 id="_43"><a name="model"></a> Суть модели:</h3>
+<p>Актор -- концептуально поток с состоянием и набором инструкций. </p>
+<p>Ограничения и следствия:</p>
+<ul>
+<li>имеет уникальный адрес для отправки сообщений</li>
+<li>может создавать новых акторов и получать их адреса</li>
+<li>может менять свое состояние без координации с другими. Уходит проблема с мьютексами и ожиданиями всякими.</li>
+<li>Непосредственно между друг другом акторы общаться не могут. Один актор отправляет сообщение и кто-то другой должен его обработать. </li>
+<li>может не останавливать выполнение для коммуникации. Т.е. модель обмена данных асинхронная.</li>
+<li>Среда выполнения может останавливать и запускать акторы независимо без ущерба производительности и доступности: т.е. если не хватает какого-то ресурса, то актор может приостановиться, но вся система не будет ждать</li>
+<li>Среда выполнения может эффективно управлять ресурсами вместо акторов: управление ресурсами можно эффективно вывести наружу</li>
+<li>Приложение может сохранять работоспособность при потере одиночных акторов, т.к. никто никакие ресурсы не удерживает, ресурсы просто будут автоматически освобождены если кто-то умрет.</li>
+</ul>
+<p>Можно реализовать:</p>
+<ol>
+<li>С помощью классических потоков с очередью (блокирующей, неблокирующей). Актор - поток + очередь. Его адрес - пара поток-очередь.</li>
+<li>Безопасная реализация с виртуализацией, все в виртуальной машине (BEAM)</li>
+</ol>
+<p>Далее актор=процесс.</p>
+<h3 id="erlang-beam"><a name="erlang"></a> Erlang и BEAM</h3>
+<p>накладывают доп ограничения:</p>
+<ul>
+<li>Неизменяемые структуры данных</li>
+<li>Состояние процесса - полностью размещается в стэке</li>
+<li>Сообщения упорядочены в очередь, т.е. гарантируем порядок доставки сообщений</li>
+<li>Получение сообщения - явная операция</li>
+</ul>
+<p>BEAM:</p>
+<ul>
+<li>Очень хорошая масштабируемость.</li>
+<li>Планирование полностью реализованое в user space: вытесняющий (он решает когда перепланируем задачи) и мультипроцессорный</li>
+<li>управление памятью: для каждого процесса отдельная куча, под некоторые задачи выделяет общий пул памяти, который жестко контролируется. В это пуле обычно код, константы, сырые массивы байт, встроенная БД.</li>
+<li>автоматическое управление ресурсами: привязываются к процессам создателями и освобождаются в случае их смерти. </li>
+<li>служба имен: позволяет именовать процессы и обращаться к ним по именам. На старте можно регистрироваться под определенным именем.</li>
+</ul>
+<p>На выходе получаем:</p>
+<p>высокую устойчивость к системным отказам/ошибкам программирования. Но не защищает от системы проектирования.</p>
+<p>многословный, устаревший синтаксис</p>
+<p>Но как проектировать саму систему?</p>
+<p>Вариант 1: Поднять систему, насоздавать процессов, слинковать их. Если что-то упало, то переподнимать всю систему.</p>
+<p>Вариант 2: <code>OTP</code> -- набор библиотек для создания приложений. Структурируем процессы в виде дерева и проектируем какую-то логику, которая будет управлять падением каких-то процессов. Из слинкованных приложений может образоваться цикл (что нежелательно)</p>
+<p>Выделяем процессоры-супервизоры. Их единственная задача: следить за детьми, чтобы их структура была такая же как ожидает приложение.</p>
+<p>Как правило, работающие ресурсы — листья дерева.</p>
+<p>Вводит 3 класса процессоров:</p>
+<ul>
+<li><code>GenServer</code> - выполняют прикладной функционал, умеют обмениваться сообщениями, отвечать и пр.</li>
+<li><code>GenSupervisor</code> - по сути не программируется, а получает конфиг с описанием дочерних супервизоров и серверов. Следят, чтобы актуальное состояние рантайма соответствовало конфигурации.</li>
+<li><code>Application</code> - общая обертка, которая связана с упаковкой и дистрибьюцией. Смотрит в конфигурацию/окружение/ОС и настраивает все суперивзоры.</li>
+</ul>
+<p>Пример:</p>
+<p>Есть сервак, который слушает tcp и возвращает сообщение всем, кто достучался.</p>
+<p>ресурсы:</p>
+<ul>
+<li>сокет-слушатель</li>
+<li>сокеты-отравители ответа</li>
+<li>PS — супервизор над портами. Если они умерли — он их не воскрешает (проблема скорее всего ниже, мы просто информируем о падении дальше)</li>
+<li>SS - Заводим еще один супервизор, который будет управлять процессом-сервером и другим супервизором. Перезапускает их при падении.</li>
+<li>Поверх него будет application</li>
+</ul>
+<h3 id="elixir"><a name="elixir"></a> Elixir</h3>
+<p>Стремный и сложный синтаксис типа пролога.</p>
+<p>Особенности:</p>
+<ul>
+<li>Динамическая типизация</li>
+<li>Неизменяемые структуры данных</li>
+<li>Паттерн-матчинг как основная управляющая конструкция. Неудачный паттерн-матчинг = ошибка рантайма</li>
+<li>Метапрограммирование</li>
+</ul>
+<p>Пример:</p>
+<p><img alt="atom - переменная равна себе и только себе" src="image-29.png" /></p>
+<p>Внутри модуля можно объявлять функции, собирать модуль и использовать из него функции. Можно объявить две одинаковые функции с разными параметрами, при поиске функции сверху вниз пройдем и найдем первую подходящую. Не найдем -- рантайм ошибка.</p>
+<p><img alt="Alt text" src="image-30.png" /></p>
+<p>Как запускать непосредственно процессы:</p>
+<p>через <code>spawn</code></p>
+<p>Как получать сообщения и менять свои состояния соответственно:</p>
+<p>через оператор <code>receive</code>:</p>
+<p><img alt="Alt text" src="image-31.png" /></p>
+<p>Причем принимает тоже какие-то структуры, по которым идет паттерн-матчинг. Блокирующий, не выйдем, пока не получим какое-то сообщение.</p>
+<p>Причем несмотря на рекурсию, BEAM сможет это соптимизировать и обрубить ее.</p>
+<p>Причем можно соединить связью два процесса с помощью <code>spawn_link</code>, тогда если хост умрет, то умрет и второй процесс (по умолчанию не умирают). Атомарная операция.</p>
+            </div>
+        </div>
+
+        <div id="generated-at">
+        Generated at: 2024-01-26 17:59:06
+    </div>
+            
+
+        <div id="footer">
+            Powered by
+            <a href="https://github.com/menduo/mdtree" target="_blank"
+                title="https://github.com/menduo/mdtree">
+                https://github.com/menduo/mdtree
+            </a>
+        </div>
+</div>
+</body>
+
+<script>
+
+</script>
+
+
+</html>
+
